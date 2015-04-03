@@ -29,10 +29,10 @@ This handler monitors private messages to it, when it sees Envoy visitor notific
 
 ```
 Envoy ッ:
-Hello! 7472e4b5-040e-4cef-b3a4-8674837dfca1 is here without a specified host at the Envoy front desk.
+Hello! John Doe is here without a specified host at the Envoy front desk.
 
 Lita bot:
-{"guest_name":"7472e4b5-040e-4cef-b3a4-8674837dfca1","location_name":"Envoy"}
+{"guest_name":"John Doe","location_name":"Envoy"}
 ```
 
 It also callback to the webhook you provided.
