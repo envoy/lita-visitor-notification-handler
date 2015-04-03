@@ -3,10 +3,9 @@ Gem::Specification.new do |spec|
   spec.version       = "0.0.2"
   spec.authors       = ["Victor Lin"]
   spec.email         = ["victor@signwithenvoy.com"]
-  spec.description   = "TODO: Add a description"
-  spec.summary       = "TODO: Add a summary"
-  spec.homepage      = "TODO: Add a homepage"
-  spec.license       = "TODO: Add a license"
+  spec.summary       = "Lita handler for parsing Envoy visitor notification message"
+  spec.homepage      = "https://github.com/envoy/lita-visitor-notification-handler"
+  spec.license       = "MIT"
   spec.metadata      = { "lita_plugin_type" => "handler" }
 
   spec.files         = `git ls-files`.split($/)
