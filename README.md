@@ -1,5 +1,7 @@
 # lita-visitor-notification-handler
 
+[![Build Status](https://travis-ci.org/envoy/lita-visitor-notification-handler.svg?branch=master)](https://travis-ci.org/envoy/lita-visitor-notification-handler)
+
 Lita handler for parsing Envoy visitor notification message
 
 ## Installation
