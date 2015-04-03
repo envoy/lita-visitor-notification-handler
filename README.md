@@ -1,6 +1,6 @@
 # lita-visitor-notification-handler
 
-TODO: Add a description of the plugin.
+Lita handler for parsing Envoy visitor notification message
 
 ## Installation
 
@@ -12,8 +12,27 @@ gem "lita-visitor-notification-handler"
 
 ## Configuration
 
-TODO: Describe any configuration attributes the plugin exposes.
+To make this handler send a post request to your webhook, you can specify `webhook_url`
+
+```ruby
+Lita.configure do |config|
+  config.handlers.visitor_notification_handler.webhook_url = 'http://my-webhook.com'
+end
+```
+
+If you need extra headers for the post request, you can also use `webhook_headers` to specify it.
+
 
 ## Usage
 
-TODO: Describe the plugin's features and how to use them.
+This handler monitors private messages to it, when it sees Envoy visitor notification message, it parses it and reply the extracted data
+
+```
+Envoy ッ:
+Hello! 7472e4b5-040e-4cef-b3a4-8674837dfca1 is here without a specified host at the Envoy front desk.
+
+Lita bot:
+{"guest_name":"7472e4b5-040e-4cef-b3a4-8674837dfca1","location_name":"Envoy"}
+```
+
+It also callback to the webhook you provided.
