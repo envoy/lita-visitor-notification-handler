@@ -35,4 +35,12 @@ Lita bot:
 {"guest_name":"John Doe","location_name":"Envoy"}
 ```
 
-It also callback to the webhook you provided.
+It also makes a post request callback to the webhook you provided, the body will be JSON in this format
+
+```JSON
+{
+    "host_name": "Host name",
+    "guest_name": "Visitor name",
+    "location_name": "Location name"
+}
+```
