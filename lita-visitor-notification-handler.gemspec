@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name          = "lita-visitor-notification-handler"
-  spec.version       = "0.0.4"
+  spec.version       = "0.0.5"
   spec.authors       = ["Victor Lin"]
   spec.email         = ["victor@signwithenvoy.com"]
   spec.summary       = "Lita handler for parsing Envoy visitor notification message"
