@@ -9,8 +9,8 @@ module Lita
       # header for webhook request
       config :webhook_headers
 
-      route(/^Hey (.+)! (.+) is here for you at the (.+) front desk\.$/, :notify_visitor)
-      route(/^Hello! (.+) is here without a specified host at the (.+) front desk\.$/, :notify_visitor)
+      route(/^(.+) is here to see you at (.+) - front desk\.$/, :notify_visitor)
+      route(/^(.+) is here at (.+) - front desk\.$/, :notify_visitor)
 
       def notify_visitor(response)
         groups = response.matches[0]
