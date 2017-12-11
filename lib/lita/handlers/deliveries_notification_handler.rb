@@ -9,7 +9,7 @@ module Lita
       route(SUBJECT_REGEX, :notify_delivery)
 
       def notify_delivery(response)
-        response.reply("TEST RESPONSE -> #{response} -> #{response.matches}")
+        response.reply("TEST RESPONSE -> #{response.message} -> #{response.extensions}")
       end
     end
     Lita.register_handler(DeliveriesNotificationHandler)
