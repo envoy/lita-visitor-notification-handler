@@ -8,7 +8,7 @@ module Lita
       UUID_REGEX = /[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}/
       PRODUCT_NAME = 'deliveries'
 
-      # URL to webhook when we see a deliveries noticiation
+      # URL to webhook when we see a Deliveries noticiation
       config :webhook_url
 
       route(SUBJECT_REGEX, :notify_delivery)
@@ -21,15 +21,11 @@ module Lita
           product: PRODUCT_NAME
         }
 
-        res = HTTParty.post(
+        HTTParty.post(
           config.webhook_url,
           body: payload.to_json,
         )
-        Logger.new(STDOUT).info("res #{res}")
-
-        puts "res #{res}"
-        puts "config.webhook_url -> #{config.webhook_url}"
-        response.reply(payload)
+        response.reply(payload.to_json)
       end
     end
     Lita.register_handler(DeliveriesNotificationHandler)

@@ -5,7 +5,7 @@ module Lita
   module Handlers
     class VisitorNotificationHandler < Handler
       PRODUCT_NAME = 'vr'
-      # URL to webhook when we see a visitor noticiation
+      # URL to webhook when we see a Visitor noticiation
       config :webhook_url
 
       route(/^(.+) is here to see you at (.+)\.$/, :notify_visitor)
@@ -27,7 +27,7 @@ module Lita
             product: PRODUCT_NAME
           }
         end
-        
+
         HTTParty.post(
           config.webhook_url,
           body: payload.to_json
