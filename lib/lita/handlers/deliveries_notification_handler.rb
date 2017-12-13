@@ -21,11 +21,13 @@ module Lita
           product: PRODUCT_NAME
         }
 
-        HTTParty.post(
+        res = HTTParty.post(
           config.webhook_url,
           body: payload.to_json,
-          headers: config.webhook_headers,
         )
+        Logger.new(STDOUT).info("res #{res}")
+        puts "res #{res}"
+        puts "config.webhook_url -> #{config.webhook_url}"
         response.reply(payload)
       end
     end
