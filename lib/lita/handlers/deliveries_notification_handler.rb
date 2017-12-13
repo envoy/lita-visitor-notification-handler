@@ -20,6 +20,7 @@ module Lita
           delivery_id: delivery_id,
           product: PRODUCT_NAME
         }
+        puts "config.webhook_url #{config.webhook_url}"
 
         HTTParty.post(
           config.webhook_url,
