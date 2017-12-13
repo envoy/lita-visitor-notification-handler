@@ -66,6 +66,6 @@ For Deliveries:
 ```JSON
 {
     "delivery_id": "0939f462-2b2a-4e1e-aba0-bb7aafbff7d4",
-    "product": "Visitor deliveries"
+    "product": "deliveries"
 }
 ```
