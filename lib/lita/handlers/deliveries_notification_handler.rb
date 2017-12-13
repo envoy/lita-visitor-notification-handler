@@ -1,6 +1,5 @@
 require 'json'
 require 'httparty'
-require 'pry-byebug'
 
 module Lita
   module Handlers
