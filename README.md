@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/envoy/lita-visitor-notification-handler.svg?branch=master)](https://travis-ci.org/envoy/lita-visitor-notification-handler)
 
-Lita handler for parsing Envoy visitor notification message
+Lita handler for parsing Envoy visitor notification message and Envoy Deliveries messages
 
 ## Installation
 
@@ -22,27 +22,50 @@ Lita.configure do |config|
 end
 ```
 
-If you need extra headers for the post request, you can also use `webhook_headers` to specify it.
-
 
 ## Usage
 
-This handler monitors private messages to it, when it sees Envoy visitor notification message, it parses it and reply the extracted data
+This handler monitors private messages to it, when it sees Envoy visitor or Envoy Deliveries notification message, it parses it and reply the extracted data
+
+
+For VR:
 
 ```
 Envoy ッ:
 Hello! John Doe is here without a specified host at the Envoy front desk.
 
 Lita bot:
-{"guest_name":"John Doe","location_name":"Envoy"}
+{"guest_name":"John Doe","location_name":"Envoy", "product": "vr"}
 ```
 
-It also makes a post request callback to the webhook you provided, the body will be JSON in this format
+For Deliveries:
+
+```
+Envoy ッ:
+You have a delivery from US Postal Service!
+
+Lita bot:
+{"delivery_id":"0939f462-2b2a-4e1e-aba0-bb7aafbff7d4","product": "deliveries"}
+```
+
+It also makes a post request callback to the webhook you provided, the body will be JSON in these formats
+
+For VR:
 
 ```JSON
 {
     "host_name": "Host name",
     "guest_name": "Visitor name",
-    "location_name": "Location name"
+    "location_name": "Location name",
+    "product": "vr"
+}
+```
+
+For Deliveries:
+
+```JSON
+{
+    "delivery_id": "0939f462-2b2a-4e1e-aba0-bb7aafbff7d4",
+    "product": "Visitor deliveries"
 }
 ```
