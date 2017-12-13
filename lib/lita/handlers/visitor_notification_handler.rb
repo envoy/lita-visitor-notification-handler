@@ -32,7 +32,7 @@ module Lita
           config.webhook_url,
           body: payload.to_json
         )
-        response.reply(payload)
+        response.reply(payload.to_json)
       end
     end
     Lita.register_handler(VisitorNotificationHandler)
