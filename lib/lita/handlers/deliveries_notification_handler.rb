@@ -26,6 +26,7 @@ module Lita
           body: payload.to_json,
         )
         Logger.new(STDOUT).info("res #{res}")
+
         puts "res #{res}"
         puts "config.webhook_url -> #{config.webhook_url}"
         response.reply(payload)
