@@ -4,9 +4,9 @@ require 'httparty'
 module Lita
   module Handlers
     class DeliveriesNotificationHandler < Handler
-      SUBJECT_REGEX = /You have a delivery from/
-      UUID_REGEX = /[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}/
-      PRODUCT_NAME = 'deliveries'
+      SUBJECT_REGEX = /You have a delivery from/.freeze
+      UUID_REGEX = /[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}/.freeze
+      PRODUCT_NAME = 'deliveries'.freeze
 
       # URL to webhook when we see a Deliveries noticiation
       config :webhook_url
@@ -28,6 +28,7 @@ module Lita
         response.reply(payload.to_json)
       end
     end
+
     Lita.register_handler(DeliveriesNotificationHandler)
   end
 end
